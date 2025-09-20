@@ -18,10 +18,16 @@ def main():
             if event.type == pygame.QUIT:
                 return
         
+
+        ## create black background
         screen.fill("black")
         
+        ## player and player functions
         player.draw(screen)
+        player.update(dt)
 
+
+        ## refresh screen
         pygame.display.flip()
     
     
