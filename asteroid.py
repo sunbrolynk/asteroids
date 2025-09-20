@@ -9,8 +9,15 @@ class Asteroid(CircleShape):
         
 
     ## draw asteroids
+    # python
     def draw(self, screen):
-        pygame.draw.circle(self.position, self.radius, width=2)
+        pygame.draw.circle(
+            screen,
+            "white",
+            (int(self.position.x), int(self.position.y)),
+            int(self.radius),
+            2,
+        )
 
 
     def update(self, dt):
