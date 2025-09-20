@@ -4,12 +4,16 @@ from constants import *
 from player import Player
 
 def main():
+    
+    ## initilization & global variables
     print("Starting Asteroids!\nScreen width: 1280\nScreen height: 720")
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     dt = 0
-
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    Player.containers = (updatable, drawable)
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
 
@@ -23,8 +27,10 @@ def main():
         screen.fill("black")
         
         ## player and player functions
-        player.draw(screen)
-        player.update(dt)
+        updatable.update(dt)
+        for i in drawable:
+            i.draw(screen)
+
 
 
         ## refresh screen
