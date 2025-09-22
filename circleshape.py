@@ -29,4 +29,4 @@ class CircleShape(pygame.sprite.Sprite):
         if center_to_center <= radius1 + radius2:
             return True
         else:
-            return False 
+            return False
