@@ -8,6 +8,7 @@ class Shot(CircleShape):
         super().__init__(x, y, radius)
         self.position = pygame.Vector2(x, y)
         self.rotation = 0
+        self.radius = SHOT_RADIUS
 
     ## draw asteroids
     # python
